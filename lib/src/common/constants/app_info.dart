@@ -1,3 +1,4 @@
+/// Información de la aplicación (versión, etc.).
 class AppInfo {
   AppInfo._();
 
