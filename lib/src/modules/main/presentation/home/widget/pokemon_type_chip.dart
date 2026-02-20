@@ -34,7 +34,7 @@ class PokemonTypeChip extends StatelessWidget {
 
   Color _textColor(BuildContext context) {
     final bg = _backgroundColor;
-    final luminance = (0.299 * bg.red + 0.587 * bg.green + 0.114 * bg.blue) / 255;
+    final luminance = 0.299 * bg.r + 0.587 * bg.g + 0.114 * bg.b;
     final isDark = luminance > 0.5;
     return isDark ? Colors.black87 : Colors.white;
   }

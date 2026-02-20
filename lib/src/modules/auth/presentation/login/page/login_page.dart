@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:pokemon_app_evertec/src/modules/auth/presentation/auth_routes.dart';
+import 'package:pokemon_app_evertec/src/modules/auth/auth_routes.dart';
 import 'package:pokemon_app_evertec/src/modules/auth/presentation/login/cubit/login_cubit.dart';
 import 'package:pokemon_app_evertec/src/modules/auth/presentation/login/cubit/login_state.dart';
 import 'package:pokemon_app_evertec/src/modules/main/main_routes.dart';

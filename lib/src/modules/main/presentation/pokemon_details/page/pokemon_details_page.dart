@@ -82,7 +82,7 @@ class _PokemonDetailImage extends StatelessWidget {
         imageUrl,
         height: 180,
         fit: BoxFit.contain,
-        errorBuilder: (_, __, ___) => Icon(
+        errorBuilder: (context, error, stackTrace) => Icon(
           Icons.image_not_supported,
           size: 80,
           color: theme.colorScheme.outline,

@@ -120,7 +120,7 @@ class PokemonCard extends StatelessWidget {
       pokemon.imageUrl,
       height: 96,
       fit: BoxFit.contain,
-      errorBuilder: (_, __, ___) => Icon(
+      errorBuilder: (context, error, stackTrace) => Icon(
         Icons.image_not_supported,
         size: 48,
         color: Theme.of(context).colorScheme.outline,

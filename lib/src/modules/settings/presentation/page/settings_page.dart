@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pokemon_app_evertec/src/common/constants/app_info.dart';
 import 'package:pokemon_app_evertec/src/common/constants/app_strings.dart';
-import 'package:pokemon_app_evertec/src/modules/auth/presentation/auth_routes.dart';
+import 'package:pokemon_app_evertec/src/modules/auth/auth_routes.dart';
 import 'package:pokemon_app_evertec/src/modules/settings/presentation/cubit/settings_cubit.dart';
 import 'package:pokemon_app_evertec/src/modules/settings/presentation/cubit/settings_state.dart';
 
