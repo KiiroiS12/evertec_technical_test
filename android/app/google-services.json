@@ -1,0 +1,118 @@
+{
+  "project_info": {
+    "project_number": "739062395077",
+    "project_id": "flutter-projects-6edb8",
+    "storage_bucket": "flutter-projects-6edb8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:739062395077:android:fffeabb448908bf6a400ac",
+        "android_client_info": {
+          "package_name": "com.example.evertec_technical_test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "739062395077-os1s9j5v74amtsb9pv2890t9dboq190o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjGrd6Dn1AZ13M7hP-r49Stw-EiVEiq6I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "739062395077-os1s9j5v74amtsb9pv2890t9dboq190o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "739062395077-oil2al5f1rutmuflb96flvqc1f77u1b4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.leimarnazarit.pushApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:739062395077:android:2961d7b468844d99a400ac",
+        "android_client_info": {
+          "package_name": "com.example.pokemon_app_evertec"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "739062395077-os1s9j5v74amtsb9pv2890t9dboq190o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjGrd6Dn1AZ13M7hP-r49Stw-EiVEiq6I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "739062395077-os1s9j5v74amtsb9pv2890t9dboq190o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "739062395077-oil2al5f1rutmuflb96flvqc1f77u1b4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.leimarnazarit.pushApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:739062395077:android:260cb03588eaf0b8a400ac",
+        "android_client_info": {
+          "package_name": "com.leimarnazarit.push_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "739062395077-os1s9j5v74amtsb9pv2890t9dboq190o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjGrd6Dn1AZ13M7hP-r49Stw-EiVEiq6I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "739062395077-os1s9j5v74amtsb9pv2890t9dboq190o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "739062395077-oil2al5f1rutmuflb96flvqc1f77u1b4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.leimarnazarit.pushApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
