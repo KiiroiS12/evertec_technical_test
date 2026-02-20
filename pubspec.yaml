@@ -38,3 +38,17 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/pixel.png
+
+# Splash screen: modo claro y oscuro
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/images/pixel.png
+  color_dark: "#121212"
+  image_dark: assets/images/pixel.png
+  android_12:
+    color: "#ffffff"
+    color_dark: "#121212"
+    image: assets/images/pixel.png
+    image_dark: assets/images/pixel.png
+    icon_background_color: "#ffffff"
+    icon_background_color_dark: "#121212"
