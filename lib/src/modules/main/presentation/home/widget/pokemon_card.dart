@@ -24,7 +24,7 @@ class PokemonCard extends StatelessWidget {
         borderRadius: BorderRadius.zero,
       ),
       child: Padding(
-        padding: const EdgeInsets.all(12),
+        padding: const EdgeInsets.all(10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
@@ -47,7 +47,7 @@ class PokemonCard extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 6),
             Row(
               crossAxisAlignment: CrossAxisAlignment.baseline,
               textBaseline: TextBaseline.alphabetic,
@@ -70,14 +70,14 @@ class PokemonCard extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 4),
+            const SizedBox(height: 2),
             Text(
               pokemon.generationLabel,
               style: AppTheme.pixelTextSmall.copyWith(
                 color: AppTheme.pokedexDarkGray,
               ),
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 6),
             Wrap(
               spacing: 6,
               runSpacing: 4,
@@ -86,7 +86,7 @@ class PokemonCard extends StatelessWidget {
                   .map((t) => PokemonTypeChip(typeName: t))
                   .toList(),
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 6),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
