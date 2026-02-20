@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:pokemon_app_evertec/src/common/theme/app_theme.dart';
 
 class PokemonTypeChip extends StatelessWidget {
   const PokemonTypeChip({
@@ -32,31 +34,29 @@ class PokemonTypeChip extends StatelessWidget {
   Color get _backgroundColor =>
       _typeColors[typeName.toLowerCase()] ?? const Color(0xFF9E9E9E);
 
-  Color _textColor(BuildContext context) {
+  Color get _textColor {
     final bg = _backgroundColor;
     final luminance = 0.299 * bg.r + 0.587 * bg.g + 0.114 * bg.b;
-    final isDark = luminance > 0.5;
-    return isDark ? Colors.black87 : Colors.white;
+    return luminance > 0.5 ? AppTheme.pokedexBlack : Colors.white;
   }
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final borderColor = theme.brightness == Brightness.dark ? Colors.white : Colors.black87;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
       decoration: BoxDecoration(
         color: _backgroundColor,
         border: Border.all(
-          color: borderColor,
+          color: isDark ? Colors.white : AppTheme.pokedexBlack,
           width: 2,
         ),
       ),
       child: Text(
         typeName.toUpperCase(),
-        style: theme.textTheme.labelSmall?.copyWith(
-          color: _textColor(context),
-          fontWeight: FontWeight.w600,
+        style: GoogleFonts.pressStart2p(
+          fontSize: 8,
+          color: _textColor,
           letterSpacing: 0.3,
         ),
       ),

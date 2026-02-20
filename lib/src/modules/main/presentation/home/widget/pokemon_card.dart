@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokemon_app_evertec/src/common/theme/app_theme.dart';
 import 'package:pokemon_app_evertec/src/modules/main/data/model/pokemon_model.dart';
 import 'package:pokemon_app_evertec/src/modules/main/presentation/home/widget/pokemon_type_chip.dart';
 
@@ -16,11 +17,10 @@ class PokemonCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final card = Card(
       elevation: 0,
       shape: RoundedRectangleBorder(
-        side: BorderSide(color: theme.colorScheme.outline, width: 2),
+        side: const BorderSide(color: AppTheme.pokedexBlack, width: 3),
         borderRadius: BorderRadius.zero,
       ),
       child: Padding(
@@ -36,9 +36,9 @@ class PokemonCard extends StatelessWidget {
                 children: [
                   Text(
                     pokemon.idFormatted,
-                    style: theme.textTheme.headlineMedium?.copyWith(
+                    style: AppTheme.pixelTextLarge.copyWith(
                       fontSize: 40,
-                      color: theme.colorScheme.onSurface.withValues(alpha: 0.2),
+                      color: AppTheme.pokedexLightGray,
                       height: 1.0,
                     ),
                   ),
@@ -54,16 +54,16 @@ class PokemonCard extends StatelessWidget {
               children: [
                 Text(
                   pokemon.idFormatted,
-                  style: theme.textTheme.bodySmall?.copyWith(
-                    color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
+                  style: AppTheme.pixelTextSmall.copyWith(
+                    color: AppTheme.pokedexDarkGray,
                   ),
                 ),
                 const SizedBox(width: 8),
                 Expanded(
                   child: Text(
                     pokemon.nameFormatted,
-                    style: theme.textTheme.titleSmall?.copyWith(
-                      color: theme.colorScheme.onSurface,
+                    style: AppTheme.pixelText.copyWith(
+                      color: AppTheme.pokedexBlack,
                     ),
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -73,8 +73,8 @@ class PokemonCard extends StatelessWidget {
             const SizedBox(height: 4),
             Text(
               pokemon.generationLabel,
-              style: theme.textTheme.bodySmall?.copyWith(
-                color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
+              style: AppTheme.pixelTextSmall.copyWith(
+                color: AppTheme.pokedexDarkGray,
               ),
             ),
             const SizedBox(height: 8),
@@ -92,14 +92,14 @@ class PokemonCard extends StatelessWidget {
               children: [
                 Text(
                   pokemon.heightFormatted,
-                  style: theme.textTheme.bodySmall?.copyWith(
-                    color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
+                  style: AppTheme.pixelTextSmall.copyWith(
+                    color: AppTheme.pokedexDarkGray,
                   ),
                 ),
                 Text(
                   pokemon.weightFormatted,
-                  style: theme.textTheme.bodySmall?.copyWith(
-                    color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
+                  style: AppTheme.pixelTextSmall.copyWith(
+                    color: AppTheme.pokedexDarkGray,
                   ),
                 ),
               ],
@@ -120,10 +120,10 @@ class PokemonCard extends StatelessWidget {
       pokemon.imageUrl,
       height: 96,
       fit: BoxFit.contain,
-      errorBuilder: (context, error, stackTrace) => Icon(
+      errorBuilder: (context, error, stackTrace) => const Icon(
         Icons.image_not_supported,
         size: 48,
-        color: Theme.of(context).colorScheme.outline,
+        color: Colors.grey,
       ),
       loadingBuilder: (context, child, loadingProgress) {
         if (loadingProgress == null) return child;

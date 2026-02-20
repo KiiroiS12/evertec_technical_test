@@ -3,6 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pokemon_app_evertec/src/common/constants/app_info.dart';
 import 'package:pokemon_app_evertec/src/common/constants/app_strings.dart';
+import 'package:pokemon_app_evertec/src/common/theme/app_theme.dart';
+import 'package:pokemon_app_evertec/src/common/theme/theme_cubit.dart';
+import 'package:pokemon_app_evertec/src/common/theme/theme_state.dart';
 import 'package:pokemon_app_evertec/src/modules/auth/auth_routes.dart';
 import 'package:pokemon_app_evertec/src/modules/settings/presentation/cubit/settings_cubit.dart';
 import 'package:pokemon_app_evertec/src/modules/settings/presentation/cubit/settings_state.dart';
@@ -31,24 +34,24 @@ Future<void> _showSignOutConfirmDialog(BuildContext context) async {
     context: context,
     barrierDismissible: false,
     builder: (context) {
-      final theme = Theme.of(context);
-      final colorScheme = theme.colorScheme;
+      final isDark = Theme.of(context).brightness == Brightness.dark;
+      final borderColor = isDark ? Colors.white : AppTheme.pokedexBlack;
       return AlertDialog(
         shape: RoundedRectangleBorder(
-          side: BorderSide(color: colorScheme.outline, width: 2),
+          side: BorderSide(color: borderColor, width: 3),
           borderRadius: BorderRadius.zero,
         ),
-        backgroundColor: colorScheme.surface,
+        backgroundColor: isDark ? const Color(0xFF1A1A1A) : AppTheme.pokedexCream,
         title: Text(
           AppStrings.confirmarCerrarSesionTitle,
-          style: theme.textTheme.titleLarge?.copyWith(
-                color: colorScheme.onSurface,
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                color: isDark ? Colors.white : AppTheme.pokedexBlack,
               ),
         ),
         content: Text(
           AppStrings.confirmarCerrarSesionMessage,
-          style: theme.textTheme.bodyMedium?.copyWith(
-                color: colorScheme.onSurface.withValues(alpha: 0.8),
+          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                color: isDark ? Colors.white70 : AppTheme.pokedexDarkGray,
               ),
         ),
         actions: [
@@ -170,6 +173,9 @@ class _SettingsView extends StatelessWidget {
                       subtitle: Text(AppInfo.versionDisplay),
                     ),
                     const Divider(height: 24),
+                    const _SectionTitle(title: AppStrings.apariencia),
+                    _ThemeSelector(),
+                    const Divider(height: 24),
                     const _SectionTitle(title: AppStrings.sesion),
                     ListTile(
                       leading: const Icon(Icons.logout),
@@ -203,6 +209,54 @@ class _DragHandle extends StatelessWidget {
           borderRadius: BorderRadius.circular(2),
         ),
       ),
+    );
+  }
+}
+
+class _ThemeSelector extends StatelessWidget {
+  const _ThemeSelector();
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<ThemeCubit, ThemeState>(
+      builder: (context, themeState) {
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                AppStrings.tema,
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
+              const SizedBox(height: 8),
+              SegmentedButton<ThemeMode>(
+                segments: const [
+                  ButtonSegment<ThemeMode>(
+                    value: ThemeMode.light,
+                    icon: Icon(Icons.light_mode_outlined),
+                    label: Text(AppStrings.temaClaro),
+                  ),
+                  ButtonSegment<ThemeMode>(
+                    value: ThemeMode.dark,
+                    icon: Icon(Icons.dark_mode_outlined),
+                    label: Text(AppStrings.temaOscuro),
+                  ),
+                  ButtonSegment<ThemeMode>(
+                    value: ThemeMode.system,
+                    icon: Icon(Icons.brightness_auto_outlined),
+                    label: Text(AppStrings.temaAuto),
+                  ),
+                ],
+                selected: {themeState.themeMode},
+                onSelectionChanged: (Set<ThemeMode> selected) {
+                  context.read<ThemeCubit>().setThemeMode(selected.first);
+                },
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }
